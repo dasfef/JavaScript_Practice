@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="alert-box" id="alert">
+        This is the Alert 
+        <button id="close">Close</button>
+    </div>
+    <div class="alert-box" id="id-box">
+        ID를 입력하세요
+        <button onclick="inputLayer('id-box', 'none')">Close</button>
+    </div>
+    <div class="alert-box" id="pw-box">
+        PW를 입력하세요
+        <button onclick="inputLayer('pw-box', 'none')">Close</button>
+    </div>
+    <button onclick="Alert('block')">알림버튼</button>
+    <button onclick="inputLayer('id-box', 'block')">ID 입력창 열기</button>
+    <button onclick="inputLayer('pw-box', 'block')">PW 입력창 열기</button>
+
+    <script>
+
+        document.getElementById('close').addEventListener('click', function(){
+            document.getElementById('alert').style.display='none';
+        })
+
+        function Alert(option) {
+            document.getElementById('alert').style.display=option;
+        }
+        
+        function inputLayer(boxname, display){
+            document.getElementsByClassName('alert-box')[0].style.display='block';
+            document.getElementById(boxname).style.display=display;
+        }
+
+    </script>
+</body>
+</html>
